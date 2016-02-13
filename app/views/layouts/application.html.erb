@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Desafiord</title>
-  <!--%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %-->
-  <!--%= javascript_include_tag 'application', 'data-turbolinks-track' => true %-->
+  <%= stylesheet_link_tag 'custom' %>
+  <%= javascript_include_tag 'default' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,7 +15,7 @@
     </div>
   </div>
 </div>
-<div id="main-container" class="container">
+<div class="container">
 <%= yield %>
 </div>
 </body>
