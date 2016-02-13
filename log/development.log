@@ -806,3 +806,11 @@ Processing by RegrasController#new as HTML
   Rendered regras/_form.html.erb (32.0ms)
   Rendered regras/new.html.erb within layouts/application (61.0ms)
 Completed 200 OK in 142ms (Views: 138.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras/new" for 127.0.0.1 at 2016-02-13 15:51:35 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegrasController#new as HTML
+  Rendered regras/_form.html.erb (60.1ms)
+  Rendered regras/new.html.erb within layouts/application (91.1ms)
+Completed 200 OK in 190ms (Views: 168.3ms | ActiveRecord: 0.0ms)
