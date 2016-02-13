@@ -28,8 +28,8 @@ class ContatosController < ApplicationController
 
     respond_to do |format|
       if @contato.save
-        format.html { redirect_to @contato, notice: 'Contato was successfully created.' }
-        format.json { render :show, status: :created, location: @contato }
+        format.html { redirect_to contatos_url, notice: 'Contato was successfully created.' }
+        format.json { render :index, status: :created, location: @contato }
       else
         format.html { render :new }
         format.json { render json: @contato.errors, status: :unprocessable_entity }
@@ -42,8 +42,8 @@ class ContatosController < ApplicationController
   def update
     respond_to do |format|
       if @contato.update(contato_params)
-        format.html { redirect_to @contato, notice: 'Contato was successfully updated.' }
-        format.json { render :show, status: :ok, location: @contato }
+        format.html { redirect_to contatos_url notice: 'Contato was successfully updated.' }
+        format.json { render :index, status: :ok, location: @contato }
       else
         format.html { render :edit }
         format.json { render json: @contato.errors, status: :unprocessable_entity }

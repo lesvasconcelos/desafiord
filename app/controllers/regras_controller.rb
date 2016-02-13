@@ -10,6 +10,7 @@ class RegrasController < ApplicationController
   # GET /regras/1
   # GET /regras/1.json
   def show
+    @contatos = Contato.where(@regra.criterio)
   end
 
   # GET /regras/new

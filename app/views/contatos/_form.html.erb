@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :estado %><br>
-    <%= f.text_field :estado %>
+    <%= f.select :estado, Contato.estados %>
   </div>
   <div class="field">
     <%= f.label :cargo %><br>

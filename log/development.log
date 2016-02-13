@@ -814,3 +814,776 @@ Processing by RegrasController#new as HTML
   Rendered regras/_form.html.erb (60.1ms)
   Rendered regras/new.html.erb within layouts/application (91.1ms)
 Completed 200 OK in 190ms (Views: 168.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:27:09 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContatosController#index as HTML
+  [1m[35mContato Load (0.0ms)[0m  SELECT "contatos".* FROM "contatos"
+  Rendered contatos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 86ms (Views: 72.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/1/edit" for 127.0.0.1 at 2016-02-13 16:27:24 -0200
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (41.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/_form.html.erb (48.0ms)
+  Rendered contatos/edit.html.erb within layouts/application (74.1ms)
+Completed 200 OK in 232ms (Views: 145.1ms | ActiveRecord: 41.0ms)
+
+
+Started PATCH "/contatos/1" for 127.0.0.1 at 2016-02-13 16:27:30 -0200
+Processing by ContatosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eP+DMzuafWQqi60ugPg2Hm4hDpGPFH8v+HiwwKOYp1qwEhrt4WSIAGTmtMBlI3u/m4nu34iks5TJr/Ecw8ee0g==", "contato"=>{"nome"=>"Leandro Vasconcelos", "email"=>"lesvasconcelos@gmail.com", "idade"=>"31", "estado"=>"RS", "cargo"=>"Analista"}, "commit"=>"Update Contato", "id"=>"1"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (18.1ms)[0m  UPDATE "contatos" SET "estado" = ?, "updated_at" = ? WHERE "contatos"."id" = ?  [["estado", "RS"], ["updated_at", "2016-02-13 18:27:30.843772"], ["id", 1]]
+  [1m[36m (16.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/contatos/1
+Completed 302 Found in 40ms (ActiveRecord: 34.1ms)
+
+
+Started GET "/contatos/1" for 127.0.0.1 at 2016-02-13 16:27:30 -0200
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered contatos/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 165ms (Views: 163.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:27:33 -0200
+Processing by ContatosController#index as HTML
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 58.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/create" for 127.0.0.1 at 2016-02-13 16:28:53 -0200
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Contato with 'id'=create):
+  app/controllers/contatos_controller.rb:67:in `set_contato'
+
+
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1419.2ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (1038.5ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (2343.3ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:31:02 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContatosController#index as HTML
+  [1m[35mContato Load (1.0ms)[0m  SELECT "contatos".* FROM "contatos"
+  Rendered contatos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 90ms (Views: 74.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contatos/1/edit" for 127.0.0.1 at 2016-02-13 16:31:05 -0200
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/_form.html.erb (30.3ms)
+  Rendered contatos/edit.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 145ms (Views: 123.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/contatos/1" for 127.0.0.1 at 2016-02-13 16:31:07 -0200
+Processing by ContatosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eb3DXD6N2khXaVH40Epu6he3/mLwlClAuNVvLQLp9r2xUFqC5HMvLBkESBY1kSNL4h8eLPck5fuJAi7xYrbPNQ==", "contato"=>{"nome"=>"Leandro Vasconcelos", "email"=>"lesvasconcelos@gmail.com", "idade"=>"31", "estado"=>"RS", "cargo"=>"Analista"}, "commit"=>"Update Contato", "id"=>"1"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/contatos/1
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/1" for 127.0.0.1 at 2016-02-13 16:31:07 -0200
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 56.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:31:10 -0200
+Processing by ContatosController#index as HTML
+  [1m[35mContato Load (0.0ms)[0m  SELECT "contatos".* FROM "contatos"
+  Rendered contatos/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 60ms (Views: 59.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:32:03 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContatosController#index as HTML
+  [1m[35mContato Load (0.0ms)[0m  SELECT "contatos".* FROM "contatos"
+  Rendered contatos/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 110ms (Views: 96.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/1/edit" for 127.0.0.1 at 2016-02-13 16:32:05 -0200
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/_form.html.erb (29.0ms)
+  Rendered contatos/edit.html.erb within layouts/application (56.0ms)
+Completed 200 OK in 146ms (Views: 127.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/contatos/1" for 127.0.0.1 at 2016-02-13 16:32:06 -0200
+Processing by ContatosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19r/mgj32du35iMywfUcLiido8d/RuW7gaqtKg0jJrIfN2ZE0gksv/mLOtwkLlGP3TVDiXj2KQCwfez2bXwfOg==", "contato"=>{"nome"=>"Leandro Vasconcelos", "email"=>"lesvasconcelos@gmail.com", "idade"=>"31", "estado"=>"RS", "cargo"=>"Analista"}, "commit"=>"Update Contato", "id"=>"1"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/contatos/1
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/contatos/1" for 127.0.0.1 at 2016-02-13 16:32:06 -0200
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/contatos/1" for 127.0.0.1 at 2016-02-13 16:32:13 -0200
+Processing by ContatosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19r/mgj32du35iMywfUcLiido8d/RuW7gaqtKg0jJrIfN2ZE0gksv/mLOtwkLlGP3TVDiXj2KQCwfez2bXwfOg==", "contato"=>{"nome"=>"Leandro Vasconcelos", "email"=>"lesvasconcelos@gmail.com", "idade"=>"31", "estado"=>"RS", "cargo"=>"Analista"}, "commit"=>"Update Contato", "id"=>"1"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/contatos/1
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/1" for 127.0.0.1 at 2016-02-13 16:32:14 -0200
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:33:02 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContatosController#index as HTML
+  [1m[35mContato Load (0.0ms)[0m  SELECT "contatos".* FROM "contatos"
+  Rendered contatos/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 124ms (Views: 88.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contatos/1/edit" for 127.0.0.1 at 2016-02-13 16:33:04 -0200
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/_form.html.erb (34.3ms)
+  Rendered contatos/edit.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 148ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/contatos/1" for 127.0.0.1 at 2016-02-13 16:33:06 -0200
+Processing by ContatosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NkPp4OR5lczSq/9361B18LOWwmvfd/nNPQPBXs9mTTH+rnA+PodgqJzG5pkOizhRRj4iJdjHNXYM1ICCrzl0uQ==", "contato"=>{"nome"=>"Leandro Vasconcelos", "email"=>"lesvasconcelos@gmail.com", "idade"=>"31", "estado"=>"RS", "cargo"=>"Analista"}, "commit"=>"Update Contato", "id"=>"1"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/contatos?notice=Contato+was+successfully+updated.
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos?notice=Contato+was+successfully+updated." for 127.0.0.1 at 2016-02-13 16:33:06 -0200
+Processing by ContatosController#index as HTML
+  Parameters: {"notice"=>"Contato was successfully updated."}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 56.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/new" for 127.0.0.1 at 2016-02-13 16:33:42 -0200
+Processing by ContatosController#new as HTML
+  Rendered contatos/_form.html.erb (3.0ms)
+  Rendered contatos/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 177ms (Views: 175.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contatos" for 127.0.0.1 at 2016-02-13 16:34:06 -0200
+Processing by ContatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CXszp5MGj2Yj00lLgNQ0OcoyX/XlHb63eiBwZMLDbF3Blqp5Sfh6Am2+UKVlD3mYP5q/u+KtcgxL9zG4opxV1Q==", "contato"=>{"nome"=>"mariana", "email"=>"mariana@teste.com.br", "idade"=>"26", "estado"=>"SC", "cargo"=>"Analista"}, "commit"=>"Create Contato"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (42.4ms)[0m  [1mINSERT INTO "contatos" ("nome", "email", "idade", "estado", "cargo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "mariana"], ["email", "mariana@teste.com.br"], ["idade", 26], ["estado", "SC"], ["cargo", "Analista"], ["created_at", "2016-02-13 18:34:06.376901"], ["updated_at", "2016-02-13 18:34:06.376901"]]
+  [1m[35m (139.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/contatos
+Completed 302 Found in 187ms (ActiveRecord: 182.1ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:34:06 -0200
+Processing by ContatosController#index as HTML
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 122ms (Views: 119.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 16:34:26 -0200
+Processing by RegrasController#index as HTML
+  [1m[35mRegra Load (0.0ms)[0m  SELECT "regras".* FROM "regras"
+  Rendered regras/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 73ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/new" for 127.0.0.1 at 2016-02-13 16:34:28 -0200
+Processing by RegrasController#new as HTML
+  Rendered regras/_form.html.erb (2.0ms)
+  Rendered regras/new.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 79ms (Views: 76.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:36:12 -0200
+Processing by ContatosController#index as HTML
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 192ms (Views: 188.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contatos/new" for 127.0.0.1 at 2016-02-13 16:36:14 -0200
+Processing by ContatosController#new as HTML
+  Rendered contatos/_form.html.erb (3.0ms)
+  Rendered contatos/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 77ms (Views: 77.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contatos" for 127.0.0.1 at 2016-02-13 16:37:02 -0200
+Processing by ContatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B9le+5w+6EwVpH3iN8ODryl+keoJ1SZ/aw0QZRHnHuzPNMclRsAdKFvJZAzSGM4O3NZxpA5l6sRa2lG5cbgnZA==", "contato"=>{"nome"=>"adriano", "email"=>"adriano@fgjh.com", "idade"=>"34", "estado"=>"SC", "cargo"=>"Diretor de Maketing"}, "commit"=>"Create Contato"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "contatos" ("nome", "email", "idade", "estado", "cargo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "adriano"], ["email", "adriano@fgjh.com"], ["idade", 34], ["estado", "SC"], ["cargo", "Diretor de Maketing"], ["created_at", "2016-02-13 18:37:02.987948"], ["updated_at", "2016-02-13 18:37:02.987948"]]
+  [1m[35m (19.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/contatos
+Completed 302 Found in 31ms (ActiveRecord: 22.1ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:37:03 -0200
+Processing by ContatosController#index as HTML
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 95ms (Views: 93.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contatos/new" for 127.0.0.1 at 2016-02-13 16:39:59 -0200
+Processing by ContatosController#new as HTML
+  Rendered contatos/_form.html.erb (2.0ms)
+  Rendered contatos/new.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 153ms (Views: 151.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contatos" for 127.0.0.1 at 2016-02-13 16:40:21 -0200
+Processing by ContatosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TlfcllM6ILsmHi6hURVoyKeXq09GAbjOoatULYxRls6GukVIicTV32hzN0+0ziVpUj9LAUGxdHWQfBXx7A6vRg==", "contato"=>{"nome"=>"sara", "email"=>"sara@dgq.ch", "idade"=>"40", "estado"=>"SP", "cargo"=>"Assistente"}, "commit"=>"Create Contato"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "contatos" ("nome", "email", "idade", "estado", "cargo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "sara"], ["email", "sara@dgq.ch"], ["idade", 40], ["estado", "SP"], ["cargo", "Assistente"], ["created_at", "2016-02-13 18:40:21.703455"], ["updated_at", "2016-02-13 18:40:21.703455"]]
+  [1m[35m (14.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/contatos
+Completed 302 Found in 19ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 16:40:21 -0200
+Processing by ContatosController#index as HTML
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 65ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 16:42:47 -0200
+Processing by RegrasController#index as HTML
+  [1m[35mRegra Load (0.0ms)[0m  SELECT "regras".* FROM "regras"
+  Rendered regras/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 167ms (Views: 165.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/new" for 127.0.0.1 at 2016-02-13 16:42:49 -0200
+Processing by RegrasController#new as HTML
+  Rendered regras/_form.html.erb (1.0ms)
+  Rendered regras/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 76ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/new" for 127.0.0.1 at 2016-02-13 16:43:19 -0200
+Processing by RegrasController#new as HTML
+  Rendered regras/_form.html.erb (10.0ms)
+  Rendered regras/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 88ms (Views: 86.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/new" for 127.0.0.1 at 2016-02-13 16:46:06 -0200
+Processing by RegrasController#new as HTML
+  Rendered regras/_form.html.erb (5.0ms)
+  Rendered regras/new.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 193ms (Views: 190.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/new" for 127.0.0.1 at 2016-02-13 16:46:15 -0200
+Processing by RegrasController#new as HTML
+  Rendered regras/_form.html.erb (2.0ms)
+  Rendered regras/new.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 200ms (Views: 198.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/regras" for 127.0.0.1 at 2016-02-13 16:46:29 -0200
+Processing by RegrasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iMTFcTNMDbNYwX8gm8UOYxbQOi0JCaamZOQOjSSw3jJAKVyv6bL41xasZs5+HkPC43jaYw65ah1VM09RRO/nug==", "regra"=>{"criterio"=>"idade > 30"}, "commit"=>"Create Regra"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "regras" ("criterio", "created_at", "updated_at") VALUES (?, ?, ?)  [["criterio", "idade > 30"], ["created_at", "2016-02-13 18:46:29.368103"], ["updated_at", "2016-02-13 18:46:29.368103"]]
+  [1m[36m (13.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/regras/1
+Completed 302 Found in 19ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-13 16:46:29 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (1.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered regras/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 56.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 16:46:34 -0200
+Processing by RegrasController#index as HTML
+  [1m[36mRegra Load (1.0ms)[0m  [1mSELECT "regras".* FROM "regras"[0m
+  Rendered regras/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 56.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras/new" for 127.0.0.1 at 2016-02-13 16:47:26 -0200
+Processing by RegrasController#new as HTML
+  Rendered regras/_form.html.erb (2.0ms)
+  Rendered regras/new.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 176ms (Views: 165.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/regras" for 127.0.0.1 at 2016-02-13 16:47:57 -0200
+Processing by RegrasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yH+Cy1806+gV+4YimnsToZMNjhITIliYnmYpsuiANiIAkhsVhcoejFuWn8x/oF4AZqVuXBSSlCOvsWhuiN8Pqg==", "regra"=>{"criterio"=>"estado = 'SC' and idade > 30"}, "commit"=>"Create Regra"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "regras" ("criterio", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["criterio", "estado = 'SC' and idade > 30"], ["created_at", "2016-02-13 18:47:57.650512"], ["updated_at", "2016-02-13 18:47:57.650512"]]
+  [1m[35m (21.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/regras
+Completed 302 Found in 33ms (ActiveRecord: 23.1ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 16:47:57 -0200
+Processing by RegrasController#index as HTML
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT "regras".* FROM "regras"[0m
+  Rendered regras/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 150ms (Views: 149.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/new" for 127.0.0.1 at 2016-02-13 16:48:02 -0200
+Processing by RegrasController#new as HTML
+  Rendered regras/_form.html.erb (1.0ms)
+  Rendered regras/new.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 74ms (Views: 73.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/regras" for 127.0.0.1 at 2016-02-13 16:48:36 -0200
+Processing by RegrasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qZcrdgMfQMHLVRoRpJOBDGrSuodqr/Kxy/V3Aimhop5herKo2eG1pYU4A/9BSMytn3payW0fPgr6IjbeSf6bFg==", "regra"=>{"criterio"=>"cargo = 'Diretor de Marketing' or estado = 'SP'"}, "commit"=>"Create Regra"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "regras" ("criterio", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["criterio", "cargo = 'Diretor de Marketing' or estado = 'SP'"], ["created_at", "2016-02-13 18:48:36.406385"], ["updated_at", "2016-02-13 18:48:36.406385"]]
+  [1m[35m (15.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/regras
+Completed 302 Found in 19ms (ActiveRecord: 16.0ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 16:48:36 -0200
+Processing by RegrasController#index as HTML
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT "regras".* FROM "regras"[0m
+  Rendered regras/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 67ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-13 16:52:32 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from show at C:/Users/Leandro Vasconcelos/projects/desafiord/app/controllers/regras_controller.rb:13)
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered regras/show.html.erb within layouts/application (26.3ms)
+Completed 500 Internal Server Error in 131ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `each' for #<Contato:0x6036018>):
+    22:   </thead>
+    23: 
+    24:   <tbody>
+    25:   <% @contatos.each do |contato| %>
+    26:       <tr>
+    27:         <td><%= contato.nome %></td>
+    28:         <td><%= contato.email %></td>
+  app/views/regras/show.html.erb:25:in `_app_views_regras_show_html_erb___894843349_50246928'
+
+
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.1ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1105.4ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (985.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (2316.1ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-13 16:56:17 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (1.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered regras/show.html.erb within layouts/application (33.4ms)
+Completed 500 Internal Server Error in 40920ms (ActiveRecord: 4.0ms)
+
+ActionView::Template::Error (Cannot visit Regra):
+    22:   </thead>
+    23: 
+    24:   <tbody>
+    25:   <% @contatos.each do |contato| %>
+    26:       <tr>
+    27:         <td><%= contato.nome %></td>
+    28:         <td><%= contato.email %></td>
+  app/views/regras/show.html.erb:25:in `_app_views_regras_show_html_erb___812409359_50022156'
+
+
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1223.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (1057.9ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (2355.1ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-13 16:58:04 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (1.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (idade > 30)[0m
+  Rendered regras/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 59288ms (Views: 91.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/contatos/1/edit" for 127.0.0.1 at 2016-02-13 16:59:24 -0200
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mContato Load (1.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered contatos/_form.html.erb (51.1ms)
+  Rendered contatos/edit.html.erb within layouts/application (74.9ms)
+Completed 200 OK in 140ms (Views: 134.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 16:59:36 -0200
+Processing by RegrasController#index as HTML
+  [1m[36mRegra Load (1.0ms)[0m  [1mSELECT "regras".* FROM "regras"[0m
+  Rendered regras/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 98ms (Views: 95.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-13 16:59:41 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (1.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (idade > 30)[0m
+  Rendered regras/show.html.erb within layouts/application (2292.9ms)
+Completed 200 OK in 6727ms (Views: 2350.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 16:59:54 -0200
+Processing by RegrasController#index as HTML
+  [1m[35mRegra Load (0.0ms)[0m  SELECT "regras".* FROM "regras"
+  Rendered regras/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 60ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/2" for 127.0.0.1 at 2016-02-13 16:59:58 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mContato Load (0.0ms)[0m  SELECT "contatos".* FROM "contatos" WHERE (estado = 'SC' and idade > 30)
+  Rendered regras/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 58.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 17:00:04 -0200
+Processing by RegrasController#index as HTML
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT "regras".* FROM "regras"[0m
+  Rendered regras/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 58.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/3" for 127.0.0.1 at 2016-02-13 17:00:08 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (cargo = 'Diretor de Marketing' or estado = 'SP')[0m
+  Rendered regras/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 58ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 17:00:30 -0200
+Processing by RegrasController#index as HTML
+  [1m[35mRegra Load (0.0ms)[0m  SELECT "regras".* FROM "regras"
+  Rendered regras/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 79ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos" for 127.0.0.1 at 2016-02-13 17:00:36 -0200
+Processing by ContatosController#index as HTML
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-13 17:00:49 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (idade > 30)[0m
+  Rendered regras/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 61ms (Views: 59.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras/2" for 127.0.0.1 at 2016-02-13 17:00:53 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (estado = 'SC' and idade > 30)[0m
+  Rendered regras/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 61ms (Views: 59.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras/3" for 127.0.0.1 at 2016-02-13 17:00:54 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (cargo = 'Diretor de Marketing' or estado = 'SP')[0m
+  Rendered regras/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 76ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/3/edit" for 127.0.0.1 at 2016-02-13 17:01:13 -0200
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered contatos/_form.html.erb (3.0ms)
+  Rendered contatos/edit.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 102ms (Views: 101.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/contatos/3" for 127.0.0.1 at 2016-02-13 17:01:19 -0200
+Processing by ContatosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/dYfRQYfoxc8Bab5yKf/ByvhnU5E1idiENm6CQccxXb+DOpk7lIDq3j/PBeGa3Wb5lJc5bRSBUUPazwPq4Q0Yg==", "contato"=>{"nome"=>"adriano", "email"=>"adriano@fgjh.com", "idade"=>"34", "estado"=>"SC", "cargo"=>"Diretor de Marketing"}, "commit"=>"Update Contato", "id"=>"3"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE "contatos" SET "cargo" = ?, "updated_at" = ? WHERE "contatos"."id" = ?[0m  [["cargo", "Diretor de Marketing"], ["updated_at", "2016-02-13 19:01:19.104562"], ["id", 3]]
+  [1m[35m (14.0ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/contatos?notice=Contato+was+successfully+updated.
+Completed 302 Found in 19ms (ActiveRecord: 15.0ms)
+
+
+Started GET "/contatos?notice=Contato+was+successfully+updated." for 127.0.0.1 at 2016-02-13 17:01:19 -0200
+Processing by ContatosController#index as HTML
+  Parameters: {"notice"=>"Contato was successfully updated."}
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 57.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/regras/3" for 127.0.0.1 at 2016-02-13 17:01:32 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (cargo = 'Diretor de Marketing' or estado = 'SP')[0m
+  Rendered regras/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 58ms (Views: 57.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/2" for 127.0.0.1 at 2016-02-13 17:51:49 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mContato Load (0.5ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (estado = 'SC' and idade > 30)[0m
+  Rendered regras/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 87ms (Views: 84.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/regras/2/edit" for 127.0.0.1 at 2016-02-13 17:58:45 -0200
+Processing by RegrasController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRegra Load (0.5ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered regras/_form.html.erb (13.0ms)
+  Rendered regras/edit.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 118ms (Views: 115.4ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/regras/2" for 127.0.0.1 at 2016-02-13 17:59:22 -0200
+Processing by RegrasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0Wm3XNdHQADDR70NYbDdoWU/VuWxfKZ3t9ivp3TsAnzSs0J9PwrgvIe9J+MvfFc9qIyXTkH4hFCoaimh2HTzaA==", "regra"=>{"criterio"=>"estado = 'SC' and idade in (26,30, 31,32)"}, "commit"=>"Update Regra", "id"=>"2"}
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  begin transaction
+  [1m[36mSQL (1.5ms)[0m  [1mUPDATE "regras" SET "criterio" = ?, "updated_at" = ? WHERE "regras"."id" = ?[0m  [["criterio", "estado = 'SC' and idade in (26,30, 31,32)"], ["updated_at", "2016-02-13 19:59:22.293754"], ["id", 2]]
+  [1m[35m (13.5ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/regras
+Completed 302 Found in 27ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-13 17:59:22 -0200
+Processing by RegrasController#index as HTML
+  [1m[36mRegra Load (0.5ms)[0m  [1mSELECT "regras".* FROM "regras"[0m
+  Rendered regras/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 73ms (Views: 71.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/regras/2" for 127.0.0.1 at 2016-02-13 17:59:25 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRegra Load (0.5ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (estado = 'SC' and idade in (26,30, 31,32))[0m
+  Rendered regras/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contatos?notice=Contato+was+successfully+updated." for 127.0.0.1 at 2016-02-13 18:19:07 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContatosController#index as HTML
+  Parameters: {"notice"=>"Contato was successfully updated."}
+  [1m[35mContato Load (0.0ms)[0m  SELECT "contatos".* FROM "contatos"
+  Rendered contatos/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 100ms (Views: 82.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/regras/2" for 127.0.0.1 at 2016-02-13 18:19:40 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mContato Load (0.0ms)[0m  SELECT "contatos".* FROM "contatos" WHERE (estado = 'SC' and idade in (26,30, 31,32))
+  Rendered regras/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 76ms (Views: 57.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contatos/1/edit" for 127.0.0.1 at 2016-02-13 18:19:49 -0200
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/_form.html.erb (54.0ms)
+  Rendered contatos/edit.html.erb within layouts/application (79.1ms)
+Completed 500 Internal Server Error in 152ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `estados' for #<Class:0x63f5010>):
+    25:   </div>
+    26:   <div class="field">
+    27:     <%= f.label :estado %><br>
+    28:     <%= f.select :estado, Contato.estados %>
+    29:   </div>
+    30:   <div class="field">
+    31:     <%= f.label :cargo %><br>
+  app/views/contatos/_form.html.erb:28:in `block in _app_views_contatos__form_html_erb___564644128_49020036'
+  app/views/contatos/_form.html.erb:1:in `_app_views_contatos__form_html_erb___564644128_49020036'
+  app/views/contatos/edit.html.erb:3:in `_app_views_contatos_edit_html_erb___367223612_49394100'
+
+
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1411.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (5.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (1174.9ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (2505.8ms)
+
+
+Started GET "/contatos/1/edit" for 127.0.0.1 at 2016-02-13 18:26:13 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered contatos/_form.html.erb (34.0ms)
+  Rendered contatos/edit.html.erb within layouts/application (58.0ms)
+Completed 200 OK in 165ms (Views: 130.7ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/contatos/1" for 127.0.0.1 at 2016-02-13 18:26:18 -0200
+Processing by ContatosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O63MyQcritLzoXs6I4soa7U336Gq7HjEsWthjgfD7tE4dzno72Yqbrdb4dRtR6L3eIQeClpoWuOu2eeIq1sfxQ==", "contato"=>{"nome"=>"Leandro Vasconcelos", "email"=>"lesvasconcelos@gmail.com", "idade"=>"31", "estado"=>"CE", "cargo"=>"Analista"}, "commit"=>"Update Contato", "id"=>"1"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mUPDATE "contatos" SET "estado" = ?, "updated_at" = ? WHERE "contatos"."id" = ?[0m  [["estado", "CE"], ["updated_at", "2016-02-13 20:26:18.743041"], ["id", 1]]
+  [1m[35m (13.1ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/contatos?notice=Contato+was+successfully+updated.
+Completed 302 Found in 20ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/contatos?notice=Contato+was+successfully+updated." for 127.0.0.1 at 2016-02-13 18:26:18 -0200
+Processing by ContatosController#index as HTML
+  Parameters: {"notice"=>"Contato was successfully updated."}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 56ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/1/edit" for 127.0.0.1 at 2016-02-13 18:26:22 -0200
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mContato Load (0.0ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered contatos/_form.html.erb (3.0ms)
+  Rendered contatos/edit.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 78ms (Views: 77.1ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/contatos/1" for 127.0.0.1 at 2016-02-13 18:26:24 -0200
+Processing by ContatosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eb6PMYzcRVn/NeIGtHZa1+CgPS0PspMQDJ0sH5JjRhN6ZHoQZJHl5bvPeOj6utBLLRP8hv82sTcTL6oZPvu3Bw==", "contato"=>{"nome"=>"Leandro Vasconcelos", "email"=>"lesvasconcelos@gmail.com", "idade"=>"31", "estado"=>"CE", "cargo"=>"Analista"}, "commit"=>"Update Contato", "id"=>"1"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/contatos?notice=Contato+was+successfully+updated.
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos?notice=Contato+was+successfully+updated." for 127.0.0.1 at 2016-02-13 18:26:24 -0200
+Processing by ContatosController#index as HTML
+  Parameters: {"notice"=>"Contato was successfully updated."}
+  [1m[35mContato Load (0.0ms)[0m  SELECT "contatos".* FROM "contatos"
+  Rendered contatos/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 57.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contatos/1" for 127.0.0.1 at 2016-02-13 18:26:27 -0200
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mContato Load (0.0ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered contatos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 56.3ms | ActiveRecord: 0.0ms)
