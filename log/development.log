@@ -5146,3 +5146,267 @@ Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-13 20:24:42 -020
 
 
 Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-13 20:24:42 -0200
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-14 12:12:14 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (idade > 30)[0m
+  Rendered regras/show.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 190ms (Views: 117.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-14 12:12:15 -0200
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-14 12:12:15 -0200
+
+
+Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-14 12:12:15 -0200
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-14 12:12:19 -0200
+Processing by RegrasController#index as HTML
+  [1m[35mRegra Load (1.0ms)[0m  SELECT "regras".* FROM "regras"
+  Rendered regras/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 74ms (Views: 71.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-14 12:12:19 -0200
+
+
+Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-14 12:12:19 -0200
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-14 12:12:19 -0200
+
+
+Started GET "/regras/1/edit" for 127.0.0.1 at 2016-02-14 12:12:27 -0200
+Processing by RegrasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered regras/_form.html.erb (83.1ms)
+  Rendered regras/edit.html.erb within layouts/application (115.1ms)
+Completed 200 OK in 186ms (Views: 181.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-14 12:12:27 -0200
+
+
+Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-14 12:12:27 -0200
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-14 12:12:27 -0200
+
+
+Started PATCH "/regras/1" for 127.0.0.1 at 2016-02-14 12:12:35 -0200
+Processing by RegrasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mU+f5d0vvnUQ0zvqELOTRzRYnsLu4obtGb4UsImAGMialWrENWIeyVQpoQRefxnb+etfaR5mpMoGDJK2JRjp3A==", "regra"=>{"criterio"=>"idade . 30"}, "commit"=>"Update Regra", "id"=>"1"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "regras" SET "criterio" = ?, "updated_at" = ? WHERE "regras"."id" = ?  [["criterio", "idade . 30"], ["updated_at", "2016-02-14 14:13:25.800442"], ["id", 1]]
+  [1m[36m (14.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/regras/1
+Completed 302 Found in 50222ms (ActiveRecord: 15.4ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-14 12:13:25 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (1.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContato Load (2.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (idade . 30)[0m
+  Rendered regras/show.html.erb within layouts/application (34.0ms)
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 3.0ms)
+
+ActionView::Template::Error (SQLite3::SQLException: near "30": syntax error: SELECT "contatos".* FROM "contatos" WHERE (idade . 30)):
+    26:   </thead>
+    27: 
+    28:   <tbody>
+    29:   <% @contatos.each do |contato| %>
+    30:       <tr>
+    31:         <td><%= contato.nome %></td>
+    32:         <td><%= contato.email %></td>
+  app/views/regras/show.html.erb:29:in `_app_views_regras_show_html_erb__834030980_50440380'
+
+
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.2ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1183.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (1059.1ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (2395.0ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-14 12:15:15 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRegra Load (1.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mContato Load (1.0ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE (idade . 30)[0m
+  Rendered regras/show.html.erb within layouts/application (31.2ms)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 3.0ms)
+
+ActionView::Template::Error (SQLite3::SQLException: near "30": syntax error: SELECT "contatos".* FROM "contatos" WHERE (idade . 30)):
+    26:   </thead>
+    27: 
+    28:   <tbody>
+    29:   <% @contatos.each do |contato| %>
+    30:       <tr>
+    31:         <td><%= contato.nome %></td>
+    32:         <td><%= contato.email %></td>
+  app/views/regras/show.html.erb:29:in `_app_views_regras_show_html_erb___451601016_50425548'
+
+
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.1ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.1ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1061.2ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (987.4ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (2263.7ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-14 12:15:26 -0200
+Processing by RegrasController#index as HTML
+  [1m[35mRegra Load (0.0ms)[0m  SELECT "regras".* FROM "regras"
+  Rendered regras/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-14 12:15:26 -0200
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-14 12:15:26 -0200
+
+
+Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-14 12:15:26 -0200
+
+
+Started GET "/regras/1/edit" for 127.0.0.1 at 2016-02-14 12:15:31 -0200
+Processing by RegrasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRegra Load (1.0ms)[0m  [1mSELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered regras/_form.html.erb (22.0ms)
+  Rendered regras/edit.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 101ms (Views: 98.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-14 12:15:31 -0200
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-14 12:15:31 -0200
+
+
+Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-14 12:15:31 -0200
+
+
+Started PATCH "/regras/1" for 127.0.0.1 at 2016-02-14 12:15:33 -0200
+Processing by RegrasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zrb5DtqSp8/n5ilsSFHBK0k24ixWDNjlOu3+9CX7DkXNbAwvMt8Hc6Mcs4IGnUu3hIUjh6aI+sIlX3jyiWP/UQ==", "regra"=>{"criterio"=>"idade . 30"}, "commit"=>"Update Regra", "id"=>"1"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://127.0.0.1:3000/regras/1
+Completed 302 Found in 117791ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/regras/1" for 127.0.0.1 at 2016-02-14 12:17:31 -0200
+Processing by RegrasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mContato Load (3.0ms)[0m  SELECT "contatos".* FROM "contatos" WHERE (idade . 30)
+  Rendered regras/show.html.erb within layouts/application (33.1ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 3.0ms)
+
+ActionView::Template::Error (SQLite3::SQLException: near "30": syntax error: SELECT "contatos".* FROM "contatos" WHERE (idade . 30)):
+    26:   </thead>
+    27: 
+    28:   <tbody>
+    29:   <% @contatos.each do |contato| %>
+    30:       <tr>
+    31:         <td><%= contato.nome %></td>
+    32:         <td><%= contato.email %></td>
+  app/views/regras/show.html.erb:29:in `_app_views_regras_show_html_erb___451601016_50425548'
+
+
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.2ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1085.9ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.1ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (1010.8ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby22/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (2329.4ms)
+
+
+Started GET "/regras" for 127.0.0.1 at 2016-02-14 12:22:32 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RegrasController#index as HTML
+  [1m[35mRegra Load (0.0ms)[0m  SELECT "regras".* FROM "regras"
+  Rendered regras/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 99ms (Views: 81.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-14 12:22:33 -0200
+
+
+Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-14 12:22:33 -0200
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-14 12:22:33 -0200
+
+
+Started GET "/regras/1/edit" for 127.0.0.1 at 2016-02-14 12:22:36 -0200
+Processing by RegrasController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRegra Load (0.0ms)[0m  [1mSELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered regras/_form.html.erb (21.3ms)
+  Rendered regras/edit.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 115ms (Views: 101.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-14 12:22:36 -0200
+
+
+Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-14 12:22:36 -0200
+
+
+Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-14 12:22:36 -0200
+
+
+Started PATCH "/regras/1" for 127.0.0.1 at 2016-02-14 12:22:37 -0200
+Processing by RegrasController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qcvdTDdY68mDXA9pdIUk2OU27thg2U3u8NEsiqBPTn2qESht3xVLdcemlYc6Sa5EKIUvc5Bdb8nvY6qMDNe/aQ==", "regra"=>{"criterio"=>"idade . 30"}, "commit"=>"Update Regra", "id"=>"1"}
+  [1m[35mRegra Load (0.0ms)[0m  SELECT  "regras".* FROM "regras" WHERE "regras"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "contatos" WHERE (idade . 30)
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered regras/_form.html.erb (1.1ms)
+  Rendered regras/edit.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 84ms (Views: 77.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2016-02-14 12:22:38 -0200
+
+
+Started GET "/assets/bootstrap.min.css" for 127.0.0.1 at 2016-02-14 12:22:38 -0200
+
+
+Started GET "/assets/bootstrap.min.js" for 127.0.0.1 at 2016-02-14 12:22:38 -0200
