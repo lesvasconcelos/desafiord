@@ -12,3 +12,12 @@
  *
  *= require bootstrap.min
  */
+
+.actions{
+    float: left;
+    margin: 5px 5px 0 0;
+}
+
+form{
+    margin-bottom: 5px;
+}
