@@ -42,7 +42,7 @@ class ContatosController < ApplicationController
   def update
     respond_to do |format|
       if @contato.update(contato_params)
-        format.html { redirect_to contatos_url notice: 'Contato was successfully updated.' }
+        format.html { redirect_to contatos_url, notice: 'Contato was successfully updated.' }
         format.json { render :index, status: :ok, location: @contato }
       else
         format.html { render :edit }

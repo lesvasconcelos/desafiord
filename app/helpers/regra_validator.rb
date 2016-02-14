@@ -3,7 +3,7 @@ class RegraValidator < ActiveModel::Validator
     begin
       Contato.where(record.criterio).any?
     rescue
-      record.errors[:base] << "Critério inválido. Verifique a sintaxe utilizada."
+      record.errors[:base] << "Invalid 'critério'. Check the sintaxe used."
     end
   end
 end

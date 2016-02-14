@@ -21,7 +21,7 @@ class ContatosControllerTest < ActionController::TestCase
       post :create, contato: { cargo: @contato.cargo, email: @contato.email, estado: @contato.estado, idade: @contato.idade, nome: @contato.nome }
     end
 
-    assert_redirected_to contato_path(assigns(:contato))
+    assert_redirected_to contatos_url
   end
 
   test "should show contato" do
@@ -36,7 +36,8 @@ class ContatosControllerTest < ActionController::TestCase
 
   test "should update contato" do
     patch :update, id: @contato, contato: { cargo: @contato.cargo, email: @contato.email, estado: @contato.estado, idade: @contato.idade, nome: @contato.nome }
-    assert_redirected_to contato_path(assigns(:contato))
+
+    assert_redirected_to contatos_url
   end
 
   test "should destroy contato" do
