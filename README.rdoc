@@ -5,6 +5,7 @@
 
 Follow the steps below to run the application:
 
+```
 git clone https://github.com/lesvasconcelos/desafiord.git
 cd desafiord
 bundle install --without production
@@ -12,3 +13,4 @@ bundle exec rake db:migrate
 bundle exec rake db:test:prepare
 cd bin
 rake test
+```
