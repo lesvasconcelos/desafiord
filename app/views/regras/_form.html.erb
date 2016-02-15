@@ -1,3 +1,32 @@
+<p>
+  Utilize o nome dos campos com operadores para criar as regras de segmentação. Por exemplo:
+  <ul>
+    <li>
+      Retornar uma lista de contatos que residam no estado de Santa Catarina <strong>E</strong> que possuam idade maior que 30 anos
+      <br>
+      <strong>critério: </strong>estado = ‘SC’ <strong>and</strong> idade > 30
+    </li>
+    <li>
+      Retornar uma lista de contatos que possuam cargo Diretor de Marketing <strong>OU</strong> residam no estado de São Paulo
+      <br>
+      <strong>critério: </strong>cargo = ‘Diretor de Marketing’ <strong>or</strong> estado = ‘SP’
+    </li>
+    <li>
+      Retornar uma lista de contatos que possuam algum cargo Diretor
+      <br>
+      <strong>critério: </strong>cargo like ‘Diretor%’
+    </li>
+    <li>
+      Retornar uma lista de contatos que possuam idade entre 30 e 40 anos
+      <br>
+      <strong>critério: </strong> idade >= 30 <strong>and</strong> idade <= 40
+      <br>
+      <strong>critério: </strong> idade <strong>in</strong> (30,31,32,33,34,35,36,37,38,39,40)
+    </li>
+  </ul>
+
+</p>
+
 <%= form_for(@regra) do |f| %>
   <% if @regra.errors.any? %>
     <div id="error_explanation">

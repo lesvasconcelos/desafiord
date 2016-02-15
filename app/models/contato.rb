@@ -1,5 +1,6 @@
 class Contato < ActiveRecord::Base
   validates :idade, numericality: {only_integer: true}
+  validates :nome, :presence =>  true
 
   def self.estados
     return [
